@@ -143,7 +143,14 @@ export default class SplunkSeries {
   }
 
   getTable() {
-    const table = new TableModel();
+    // const table = new TableModel();
+    const table = {
+      columns: [],
+      columnMap: {},
+      rows: [],
+      type: 'table',
+    }
+        
     let i, j;
 
     if (this.results.rows.length === 0) {
